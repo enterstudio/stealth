@@ -2,8 +2,8 @@
 
 <form action="/something" method="post">
   {{> _partial}}
-  <input type="text" />
-  <input type="text" value="{{ i }}"/>
+  <input type="text" name="foo" value="bar"/>
+  <input type="text" name="counter" value="{{ i }}"/>
   <input type="submit" />
 </form>
 
