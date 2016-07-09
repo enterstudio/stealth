@@ -22,12 +22,16 @@
     "handlebars": "^4.0.5",
     "helmet": "^2.1.1",
     "lodash": "^4.13.1",
+    "nightwatch": "^0.9.5",
     "node-uuid": "^1.4.7",
+    "selenium-download": "^2.0.2",
     "underscore": "^1.8.3",
     "useragent": "^2.1.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "cd ./example; node server.js"
+    "start": "cd ./example; node server.js",
+    "install-selenium": "node -e \"require('selenium-download').ensure('./bin', console.log.bind(console));\"",
+    "nightwatch": "./node_modules/.bin/nightwatch"
   }
 }
