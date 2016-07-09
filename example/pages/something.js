@@ -5,6 +5,6 @@ module.exports = {
     setTimeout(function() {
       // throw new Error();
       return callback(null, { i: request.session.i || 0 });
-    }, 2000);
+    }, 1000);
   }
 };
