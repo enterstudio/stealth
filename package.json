@@ -32,6 +32,6 @@
   "scripts": {
     "start": "cd ./example; node server.js",
     "install-selenium": "node -e \"require('selenium-download').ensure('./bin', console.log.bind(console));\"",
-    "nightwatch": "./node_modules/.bin/nightwatch"
+    "test": "./node_modules/.bin/nightwatch"
   }
 }

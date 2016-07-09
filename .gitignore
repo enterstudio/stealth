@@ -3,3 +3,5 @@ coverage.html
 complexity
 npm-debug.log
 stealth.cpuprofile
+bin
+reports
