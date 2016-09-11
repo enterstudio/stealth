@@ -11,7 +11,7 @@
     "url": "https://github.com/theninj4/stealth"
   },
   "bin": {
-    "stealth": "node -e 'require('stealth').start();'"
+    "stealth": "bin/stealth.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
