@@ -28,5 +28,5 @@ if (argv._.indexOf('build') !== -1) {
       -var 'package=${package.name}' \
       -var 'path=${cwd}' \
       -var 'nodeVersion=${nodeVersion}' \
-      ./packer.json`);
+      ${__dirname}/../build/packer.json`);
 }

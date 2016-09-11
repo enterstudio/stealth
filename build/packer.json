@@ -12,25 +12,32 @@
   "provisioners": [
     {
       "type": "shell",
+      "inline_shebang": "/bin/bash -e",
       "inline": [
-        "mkdir /mnt/{{user `package`}}",
         "cd /mnt",
+        "apt-get update",
+        "apt-get install -y wget xz-utils",
         "wget https://nodejs.org/dist/v{{user `nodeVersion`}}/node-v{{user `nodeVersion`}}-linux-x64.tar.xz -O node.tar.xz",
         "tar -xJf node.tar.xz",
-        "echo PATH=/mnt/node-v{{user `nodeVersion`}}-linux-x64/bin:/mnt/{{user `package`}}/node_modules/.bin:$PATH >> ~/.bashrc"
+        "rm node.tar.xz",
+        "echo PATH=/mnt/node-v{{user `nodeVersion`}}-linux-x64/bin:/mnt/{{user `package`}}/node_modules/.bin:$PATH >> ~/.bashrc",
+        "source ~/.bashrc"
       ]
     },
     {
       "type": "file",
       "source": "{{user `path`}}",
-      "destination": "/mnt/{{user `package`}}"
+      "destination": "/mnt/"
     },
     {
       "type": "shell",
+      "inline_shebang": "/bin/bash -e",
       "inline": [
+        "PATH=/mnt/node-v{{user `nodeVersion`}}-linux-x64/bin:/mnt/{{user `package`}}/node_modules/.bin:$PATH",
         "cd /mnt/{{user `package`}}",
-        "rm -rf node_modules",
-        "npm install"
+        "echo NodeJS version is `node -v`",
+        "echo NPM version is `npm -v`",
+        "echo {{user `package`}} version is `node -e 'console.log(require(\"./package.json\").version)'`"
       ]
     }
   ]
