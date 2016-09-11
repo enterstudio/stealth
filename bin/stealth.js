@@ -11,6 +11,8 @@ try {
   throw new Error('You need to create a package.json');
 }
 
+var nodeVersion = packa.engines.node;
+
 if (argv._.indexOf('init') !== -1) {
   shell.mkdir('-p', [ 'actions', 'config', 'pages', 'static', 'templates']);
   shell.cp(__dirname + '/../build/*', '.');
@@ -25,5 +27,6 @@ if (argv._.indexOf('build') !== -1) {
     packer build \
       -var 'package=${package.name}' \
       -var 'path=${cwd}' \
+      -var 'nodeVersion=${nodeVersion}' \
       ./packer.json`);
 }
