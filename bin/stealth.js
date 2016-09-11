@@ -11,7 +11,7 @@ try {
   throw new Error('You need to create a package.json');
 }
 
-var nodeVersion = packa.engines.node;
+var nodeVersion = package.engines.node;
 
 if (argv._.indexOf('init') !== -1) {
   shell.mkdir('-p', [ 'actions', 'config', 'pages', 'static', 'templates']);
