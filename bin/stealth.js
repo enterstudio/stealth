@@ -23,6 +23,7 @@ if (argv._.indexOf('start') !== -1) {
 }
 
 if (argv._.indexOf('build') !== -1) {
+  shell.rm(cwd + '/' + package + '.tar');
   shell.exec(`
     packer build \
       -var 'package=${package.name}' \
