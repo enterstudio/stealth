@@ -1,0 +1,8 @@
+{
+  "apps" : [{
+    "name": "stealth",
+    "script": "./api.js",
+    "instances": 2,
+    "exec_mode": "cluster"
+  }]
+}

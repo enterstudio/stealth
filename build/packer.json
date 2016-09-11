@@ -1,0 +1,22 @@
+{
+  "variables": {
+    "name": "stealth"
+  },
+  "builders": [{
+    "type": "docker",
+    "image": "ubuntu",
+    "export_path": "{{user `name`}}.tar"
+  }],
+  "provisioners": [{
+    "type": "file",
+    "source": "./",
+    "destination": "/tmp"
+  },{
+    "type": "shell",
+    "inline": [
+      "pwd",
+      "apt-get update",
+      "apt-get install -y redis-server"
+    ]
+  }]
+}
