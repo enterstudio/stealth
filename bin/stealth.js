@@ -24,10 +24,12 @@ if (argv._.indexOf('start') !== -1) {
 
 if (argv._.indexOf('build') !== -1) {
   shell.rm(cwd + '/' + package.name + '.tar');
+  var id_rsa = shell.cat('~/.ssh/id_rsa');
   shell.exec(`
     packer build \
       -var 'package=${package.name}' \
       -var 'path=${cwd}' \
       -var 'nodeVersion=${nodeVersion}' \
+      -var 'id_rsa="${id_rsa}"' \
       ${__dirname}/../build/packer.json`);
 }
