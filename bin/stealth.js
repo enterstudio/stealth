@@ -19,7 +19,7 @@ if (argv._.indexOf('init') !== -1) {
 }
 
 if (argv._.indexOf('start') !== -1) {
-  require('stealth').start();
+  require('./stealth-server');
 }
 
 if (argv._.indexOf('build') !== -1) {
