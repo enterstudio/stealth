@@ -43,8 +43,10 @@
         "echo NPM version is `npm -v`",
         "echo {{user `package`}} version is `node -e 'console.log(require(\"./package.json\").version)'`",
         "rm -rf ./node_modules",
+        "mkdir ~/.ssh",
         "echo '{{user `id_rsa`}}' > ~/.ssh/id_rsa",
-        "npm install"
+        "npm install",
+        "rm -rf ~/.ssh/id_rsa"
       ]
     }
   ]
