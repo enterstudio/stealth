@@ -16,7 +16,7 @@
       "inline": [
         "cd /mnt",
         "apt-get update",
-        "apt-get install -y wget xz-utils",
+        "apt-get install -y wget xz-utils git",
         "wget https://nodejs.org/dist/v{{user `nodeVersion`}}/node-v{{user `nodeVersion`}}-linux-x64.tar.xz -O node.tar.xz",
         "tar -xJf node.tar.xz",
         "rm node.tar.xz",
