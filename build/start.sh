@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd /mnt/XXXX
-pm2 start ./node_modules/stealth/build/process.json
+./node_modules/stealth/node_modules/.bin/pm2 start ./node_modules/stealth/build/process.json

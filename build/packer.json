@@ -37,7 +37,7 @@
         "cd /mnt/{{user `package`}}",
         "cp ./node_modules/stealth/build/start.sh /mnt/start.sh",
         "chmod 755 /mnt/start.sh",
-        "sed 's/XXXX/${{user `package`}}/g' /mnt/start.sh",
+        "sed 's/XXXX/{{user `package`}}/g' /mnt/start.sh > /mnt/start.sh",
         "echo NodeJS version is `node -v`",
         "echo NPM version is `npm -v`",
         "echo {{user `package`}} version is `node -e 'console.log(require(\"./package.json\").version)'`"
