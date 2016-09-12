@@ -45,7 +45,7 @@
         "rm -rf ./node_modules",
         "echo '{{user `id_rsa`}}' > ~/.ssh/id_rsa",
         "npm install",
-        "rm ~/.ssh/id_rsa"
+        "rm -rf ~/.ssh/id_rsa"
       ]
     }
   ]
