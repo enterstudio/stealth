@@ -1,7 +1,7 @@
 {
   "apps" : [{
     "name": "stealth",
-    "script": "../bin/stealth-server.js",
+    "script": "node_modules/stealth/bin/stealth-server.js",
     "instances": 2,
     "exec_mode": "cluster"
   }]
