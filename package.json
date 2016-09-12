@@ -24,16 +24,17 @@
     "handlebars": "^4.0.5",
     "helmet": "^2.1.1",
     "lodash": "^4.13.1",
-    "minimist": "^1.2.0",
-    "nightwatch": "^0.9.5",
     "node-uuid": "^1.4.7",
     "pm2": "^1.1.3",
-    "selenium-download": "^2.0.2",
-    "shelljs": "^0.7.4",
     "underscore": "^1.8.3",
     "useragent": "^2.1.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "nightwatch": "^0.9.5",
+    "selenium-download": "^2.0.2",
+    "shelljs": "^0.7.4"
+  },
   "scripts": {
     "start": "cd ./example; node -e \"require('..').start();\"",
     "install-selenium": "node -e \"require('selenium-download').ensure('./bin', console.log.bind(console));\"",
